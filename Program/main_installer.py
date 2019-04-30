@@ -2,6 +2,7 @@ import ctypes
 import os
 import platform
 from Repair_KDE import install_KDE, remove_KDE
+from update_system import update_system
 
 # https://stackoverflow.com/questions/287871/how-to-print-colored-text-in-terminal-in-python
 
@@ -26,6 +27,7 @@ elif platform.system() == 'Windows':
 
         if choice == "1":  # Menu #1
             # os.system("update_system.py")
+            update_system()
             install_KDE()
             remove_KDE()
         elif choice == "2":  # Menu #1:

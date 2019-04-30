@@ -15,6 +15,8 @@
 import os
 import sys
 from Scripts.bcolors import bcolors
+from system_info import system_info
+system_info()
 
 bc = bcolors()
 print(sys.argv)
