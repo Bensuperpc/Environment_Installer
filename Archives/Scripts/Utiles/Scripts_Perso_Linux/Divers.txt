@@ -1,0 +1,26 @@
+for i in `seq 1 2`; do 
+#echo "tour de boucle $i"; 
+#ping -c 5 -q www.google.fr |grep time= | awk  {'print $10'}
+ping -c 4 www.stackoverflow.com | tail -1| awk '{print $4}' | cut -d '/' -f 2
+
+done
+
+
+DIR="$(cd "$(dirname "$0")" && pwd)";#Repertoire courant du lanceur bash
+echo $DIR;
+DIRCron="/etc/crontab"; #Repertoire de Cron
+
+file_name=test_files.txt
+file_name="$DIR/$file_name"; #dd
+echo $file_name
+echo "" > $file_name
+current_time=$(date "+%Y.%m.%d-%H.%M.%S")
+echo "Current Time : $current_time"
+ 
+new_fileName=$file_name.$current_time
+echo "Nom du nouveau Fichier: " "$new_fileName"
+
+mv $file_name $new_fileName
+
+echo "You should see new file generated with timestamp on it.."
+ 
