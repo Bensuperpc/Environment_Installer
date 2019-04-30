@@ -17,6 +17,8 @@ import sys
 
 print(sys.argv)
 
+#pip install colorama
+
 #x = int( sys.argv[1] )
 #y = int( sys.argv[2] )
 
