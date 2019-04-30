@@ -1,16 +1,16 @@
 import ctypes
 import os
 import platform
+from Repair_KDE import install_KDE, remove_KDE
 
-
-#https://stackoverflow.com/questions/287871/how-to-print-colored-text-in-terminal-in-python
+# https://stackoverflow.com/questions/287871/how-to-print-colored-text-in-terminal-in-python
 
 if platform.system() == 'Linux':
     try:
         is_admin = os.getuid() == 0
     except AttributeError:
         is_admin = ctypes.windll.shell32.IsUserAnAdmin() != 0
-    #print('Run in Admin :', end='')
+    # print('Run in Admin :', end='')
     print(is_admin)
 elif platform.system() == 'Windows':
     choice = "0"
@@ -25,17 +25,13 @@ elif platform.system() == 'Windows':
         choice = input("Please make a choice and press Enter: ")
 
         if choice == "1":  # Menu #1
-        	os.system("update_system.py")
+            # os.system("update_system.py")
+            install_KDE()
+            remove_KDE()
         elif choice == "2":  # Menu #1:
             os.system('sudo apt --fix-broken install -y')
         elif choice == "3":  # Menu #1:
-            os.system('clear')
-            print("Remove KDE...")
-            os.system('sudo apt-get purge kubuntu-desktop -y')
-            os.system('sudo apt-get purge sddm-theme-breeze -y')
-            print("Install KDE...")
-            os.system('sudo apt-get install sddm-theme-breeze -y')
-            os.system('sudo apt-get install kubuntu-desktop -y')
+            os.system("Repair_KDE.py")
         elif choice == "4":  # Menu #1:4
             os.system('sudo add-apt-repository ppa:kubuntu-ppa/backports -y')
             os.system('sudo apt update && sudo apt dist-upgrade -y')

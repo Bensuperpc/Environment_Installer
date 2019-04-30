@@ -14,14 +14,21 @@
 # import needed modules
 import os
 import sys
+from Scripts.bcolors import bcolors
 
+bc = bcolors()
 print(sys.argv)
 
-#pip install colorama
+# pip install colorama
 
 #x = int( sys.argv[1] )
 #y = int( sys.argv[2] )
 
-#Launch main installer
-os.system("main_installer.py")
+
+try:
+        # Launch main installer
+    os.system("main_installer.py")
+    print("Script done ! ^^")
+except AttributeError:
+    print("Error, Script failed")
 os.system("pause")
