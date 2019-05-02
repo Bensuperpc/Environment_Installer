@@ -10,7 +10,13 @@ def system_info():
     print(platform.architecture(), end=' ')
     print(platform.dist(), end=' ')
     print(sys.version, end=' ')
-    print(sys.version_info, end=' ')
 
     print(os.name, end=' ')  # nt/ls
-    # lsb_release.get_lsb_information()
+
+    if sys.hexversion >= 0x3000000:
+        # Python 3 code in this block
+        print('Python 3.x hexversion %s is in use.' % hex(sys.hexversion))
+    else:
+        # Python 2 code in this block
+        print('Python 2.x hexversion %s is in use.' % hex(sys.hexversion))
+    print(sys.version_info, end=' ')

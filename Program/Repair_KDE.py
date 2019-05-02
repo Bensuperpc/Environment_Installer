@@ -1,3 +1,18 @@
+#
+# KDE.py - Commands for KDE env
+#
+# Created by Benoît(Bensuperpc@gmail.com) 30, April of 2019
+# Updated by X for python 3.X
+#
+# Released into the Public domain with MIT licence
+# https://opensource.org/licenses/MIT
+#
+# Written with Sublime text 3 and python 3.7.3
+# Script compatibility : Linux (Ubuntu ad debian based)
+#
+# ==============================================================================
+
+
 import os
 import platform
 

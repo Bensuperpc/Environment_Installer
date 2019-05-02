@@ -7,6 +7,7 @@ from update_system import update_system
 
 # https://stackoverflow.com/questions/287871/how-to-print-colored-text-in-terminal-in-python
 bc = KDE()
+bd = update_system()
 
 
 def install_env():
@@ -19,20 +20,19 @@ def install_env():
         print(is_admin)
     elif platform.system() == 'Linux':
         choice = "0"
-        while choice != "q":
+        while choice != "q" or "Q":
             print("Main menu: Choose 1 of 5 choices")
             print("Choose 1 for update system")
             print("Choose 2 for repair broken packages")
             print("Choose 3 for repair KDE")
-            print("Choose 4 Grub config")
+            print("Choose 4 KDE Install")
             print("Choose 5 for install Dev environment")
             print("tape 'q' for leave this menu")
             choice = input("Please make a choice and press Enter: ")
 
             if choice == "1":  # Menu #1
                 print("OK")
-                os.system("ping google.fr")
-                # update_system()
+                bd.update_system()
 
             elif choice == "2":  # Menu #1:
                 os.system('sudo apt --fix-broken install -y')

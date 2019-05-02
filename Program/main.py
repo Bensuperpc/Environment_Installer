@@ -3,6 +3,7 @@
 #
 # Created by Benoît(Bensuperpc@gmail.com) 30, April of 2019
 # Updated by X for python 3.X
+#
 # Released into the Public domain with MIT licence
 # https://opensource.org/licenses/MIT
 #
@@ -30,7 +31,8 @@ print(sys.argv)
 # y = int( sys.argv[2] )
 
 
-if (sys.version_info > (3, 0)):
+# if (sys.version_info > (3, 0)):
+if sys.hexversion >= 0x3000000:
     try:
         # Launch main installer
         install_env()
