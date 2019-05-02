@@ -1,10 +1,12 @@
 import ctypes
 import os
 import platform
-from Repair_KDE import install_KDE, remove_KDE
+# from Repair_KDE import install_KDE, remove_KDE
+from Repair_KDE import KDE
 from update_system import update_system
 
 # https://stackoverflow.com/questions/287871/how-to-print-colored-text-in-terminal-in-python
+bc = KDE()
 
 
 def install_env():
@@ -35,8 +37,8 @@ def install_env():
             elif choice == "2":  # Menu #1:
                 os.system('sudo apt --fix-broken install -y')
             elif choice == "3":  # Menu #1:
-                install_KDE()
-                remove_KDE()
+                bc.install_KDE()
+                bc.remove_KDE()
             elif choice == "4":  # Menu #1:4
                 os.system('sudo add-apt-repository ppa:kubuntu-ppa/backports -y')
                 os.system('sudo apt update && sudo apt dist-upgrade -y')

@@ -1,0 +1,8 @@
+[
+	//https://stackoverflow.com/questions/19181999/how-to-create-a-keyboard-shortcut-for-sublimerepl
+	{ "keys": ["ctrl+alt+b"], "command": "run_existing_window_command", "args":
+{
+    "id": "repl_python_run",
+    "file": "config/Python/Main.sublime-menu"
+}}
+]

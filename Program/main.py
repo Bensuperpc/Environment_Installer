@@ -2,12 +2,12 @@
 # main.py - main file for Environment Installer
 #
 # Created by Benoît(Bensuperpc@gmail.com) 30, April of 2019
-# Updated by Benoît(Bensuperpc@gmail.com) for python 3
+# Updated by X for python 3.X
 # Released into the Public domain with MIT licence
 # https://opensource.org/licenses/MIT
 #
-# Use Sublime text 3 and python 3.7.3
-# Script compatibility : Windows, Linux, Mac
+# Written with Sublime text 3 and python 3.7.3
+# Script compatibility : Linux (Ubuntu ad debian based)
 #
 # ==============================================================================
 
@@ -15,14 +15,14 @@
 # import needed modules
 import os
 import sys
-from Scripts.bcolors import bcolors
+# from Scripts.bcolors import bcolors
 from system_info import system_info
 from main_installer import install_env
 system_info()
 
-bc = bcolors()
+# bc = bcolors()
 print(sys.argv)
-bc.test()
+# bc.test()
 
 # pip install colorama
 
