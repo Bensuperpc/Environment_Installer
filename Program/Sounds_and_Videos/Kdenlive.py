@@ -1,6 +1,6 @@
 #
 #
-# update_system.py - Update system
+# Kdenlive.py - Kdenlive installer
 #
 # Created by Benoît(Bensuperpc@gmail.com) 30, April of 2019
 # Updated by X for python 3.X
@@ -14,11 +14,13 @@
 # ==============================================================================
 
 
-import os
 import platform
+import os  # We need this module
+import sys
+# import lsb_release
 
 
-class update_system:
+class Kdenlive:
     major = "1"
     minor = "0"
     micro = "0"
@@ -27,13 +29,10 @@ class update_system:
     def class_version(self):
         return self.major + "." + self.minor + "." + self.micro + ":" + self.releaselevel
 
-    def update_system():
-        '''
-        Sert à supprimer kde'''
+    def Kdenlive_installer():
         if platform.system() == 'Linux':
-            print("Update system...")
-            os.system('sudo apt-get update')
-            os.system('sudo apt-get dist-upgrade -y')
+            os.system('sudo apt-get install kdenlive -y')
+            os.system('sudo apt-get install frei0r-plugin -y')
         else:
             print("Wrong OS Only for Linux !")
 
@@ -42,6 +41,13 @@ class update_system:
 
 
 if __name__ == '__main__':
-    objName = update_system()
-    print(objName.class_version())
-    # objName.update_system()
+    objName = Kdenlive()
+    print("Lib Version : " + objName.class_version())
+    # count the arguments
+    arguments = len(sys.argv) - 1
+    position = 1
+    while (arguments >= position):
+        print("parameter %i: %s" % (position, sys.argv[position]))
+        position = position + 1
+
+    # objName.install_KDE()

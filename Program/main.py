@@ -17,9 +17,15 @@
 import os
 import sys
 # from Scripts.bcolors import bcolors
-from system_info import system_info
+from System.system_info import system_info
 from main_installer import install_env
-system_info()
+from System.Graphical_environment_detector import GED
+
+bc = system_info()
+bd = GED()
+
+system_info.system_info()
+print(bd.detect_desktop_environment())
 
 # bc = bcolors()
 print(sys.argv)

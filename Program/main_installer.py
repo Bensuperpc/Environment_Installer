@@ -2,11 +2,11 @@ import ctypes
 import os
 import platform
 # from Repair_KDE import install_KDE, remove_KDE
-from Repair_KDE import KDE
+from KDE_plasma import KDE_plasma
 from update_system import update_system
 
 # https://stackoverflow.com/questions/287871/how-to-print-colored-text-in-terminal-in-python
-bc = KDE()
+bc = KDE_plasma()
 bd = update_system()
 
 
@@ -26,7 +26,7 @@ def install_env():
             print("Choose 2 for repair broken packages")
             print("Choose 3 for repair KDE")
             print("Choose 4 KDE Install")
-            print("Choose 5 for install Dev environment")
+            print("Choose 5 ")
             print("tape 'q' for leave this menu")
             choice = input("Please make a choice and press Enter: ")
 
@@ -40,8 +40,7 @@ def install_env():
                 bc.install_KDE()
                 bc.remove_KDE()
             elif choice == "4":  # Menu #1:4
-                os.system('sudo add-apt-repository ppa:kubuntu-ppa/backports -y')
-                os.system('sudo apt update && sudo apt dist-upgrade -y')
+                print("Choose 3 for install WordPress Server software")
             elif choice == "5":  # Menu #1:5
                 print("Second Menu: Choose 1 of 5 choices")
                 print("Choose 1 for install Desktop software(QT,Kdenlive...)")
