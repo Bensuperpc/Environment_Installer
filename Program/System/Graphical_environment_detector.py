@@ -13,9 +13,11 @@
 #
 # ==============================================================================
 
+# https://stackoverflow.com/questions/14768162/get-the-return-value-from-a-function-in-a-class-in-python
 
 import os
 import platform
+import sys
 
 
 class GED:
@@ -30,6 +32,7 @@ class GED:
 
     def detect_desktop_environment(self):
         desktop_environment = ''
+
         if os.environ.get('KDE_FULL_SESSION') == 'true':
             desktop_environment = 'kde'
         elif os.environ.get('GNOME_DESKTOP_SESSION_ID'):
@@ -43,10 +46,12 @@ class GED:
         return desktop_environment
 
     def __init__(self):
-        self.name = "GED"
+        self.name = ""
 
 
 if __name__ == '__main__':
     objName = GED()
     print(objName.class_version())
+    print(sys.argv[0])
+    objName.detect_desktop_environment()
     # objName.install_KDE()
