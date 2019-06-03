@@ -12,7 +12,7 @@
 #
 # ==============================================================================
 
-
+# "python.jediEnabled": false,
 # import needed modules
 import os
 import sys
@@ -24,7 +24,7 @@ from System.Graphical_environment_detector import GED
 bc = system_info()
 bd = GED()
 
-system_info.system_info()
+# system_info.system_info()
 print(bd.detect_desktop_environment())
 
 # bc = bcolors()

@@ -18,6 +18,7 @@ import platform
 import os  # We need this module
 import sys
 # import lsb_release
+import struct
 
 
 class system_info:
@@ -31,6 +32,7 @@ class system_info:
 
     def system_info():
         if platform.system() == 'Linux':
+            print('Python version :' + struct.calcsize("P") * 8 + 'bit')
             print(platform.system(), end=' ')  # Linux/Darwin/Windows
             print(platform.release(), end=' ')  # 2.6.22-15-generic€
             print(platform.architecture(), end=' ')
@@ -61,4 +63,4 @@ if __name__ == '__main__':
         print("parameter %i: %s" % (position, sys.argv[position]))
         position = position + 1
 
-    # objName.install_KDE()
+    objName.system_info()

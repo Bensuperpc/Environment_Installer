@@ -3,7 +3,7 @@ import os
 import platform
 # from Repair_KDE import install_KDE, remove_KDE
 from KDE_plasma import KDE_plasma
-from update_system import update_system
+from System.update_system import update_system
 
 # https://stackoverflow.com/questions/287871/how-to-print-colored-text-in-terminal-in-python
 bc = KDE_plasma()
@@ -20,7 +20,8 @@ def install_env():
         print(is_admin)
     elif platform.system() == 'Linux':
         choice = "0"
-        while choice != "q" or "Q":
+        while choice != 'q' or 'Q':
+            print("Choose :" + choice)
             print("Main menu: Choose 1 of 5 choices")
             print("Choose 1 for update system")
             print("Choose 2 for repair broken packages")
@@ -33,7 +34,9 @@ def install_env():
             if choice == "1":  # Menu #1
                 print("OK")
                 bd.update_system()
-
+            elif choice == "q":  # Menu #1:
+                print("Leave this menu...")
+                break
             elif choice == "2":  # Menu #1:
                 os.system('sudo apt --fix-broken install -y')
             elif choice == "3":  # Menu #1:
@@ -59,9 +62,8 @@ def install_env():
                     print("Do Something 4")
                 elif choice1 == "4":
                     print("Do Something 4")
-
-            elif choice == "q":  # Menu #1
-                print("Leave this menu...")
+            elif choice == "6":  # Menu #1:4
+                print("OK")
             else:
                 print("Sorry, i don't understand your choice :/")
     else:
